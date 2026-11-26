@@ -38,10 +38,9 @@ public class LockService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+goForeground();
         overlay = new LockOverlay(this);
-        goForeground();
-
-        IntentFilter f = new IntentFilter();
+IntentFilter f = new IntentFilter();
         f.addAction(Intent.ACTION_SCREEN_OFF);
         f.addAction(Intent.ACTION_SCREEN_ON);
         if (Build.VERSION.SDK_INT >= 33) {
